@@ -1,0 +1,28 @@
+/* Fondo azul medio con texto claro */
+nav.navbar {
+  background-color: #254D70 !important; /* fondo azul medio fuerte */
+}
+
+.navbar-brand {
+  color: #EFE4D2 !important; /* texto claro para que resalte */
+  font-weight: bold;
+  font-size: 1.7rem;
+}
+/* Dropdown links */
+.nav-link,
+.dropdown-toggle {
+  color: #EFE4D2;
+}
+
+.dropdown-menu {
+  background-color: #EFE4D2;
+}
+
+.dropdown-item {
+  color: #254D70;
+}
+
+.dropdown-item:hover {
+  background-color: #131D4F;
+  color: #EFE4D2;
+}

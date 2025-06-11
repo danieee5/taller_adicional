@@ -1,0 +1,20 @@
+/* Menu con fondo azul medio */
+nav.navbar {
+  background-color: #954C2E !important; /* fondo azul medio fuerte */
+}
+
+/* Enlaces */
+.nav-link {
+  color: #EFE4D2;
+  font-weight: 500;
+}
+
+.nav-link.active {
+  color: #954C2E;
+}
+
+.nav-link:hover {
+  color: #EFE4D2;
+  background-color: #131D4F;
+  border-radius: 4px;
+}
