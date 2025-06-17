@@ -21,10 +21,7 @@ export class RecetasService {
   // en el constructor entran los servicios que se van a usar y que las clases necesitan
   constructor(private http: HttpClient) { } // inyectar el servicio HttpClient
 
-  //no devuelve datos, solo deja el flujo que debe seguir la info cuando llegue (observable)
-  // ese observable tiene un objeto con una propiedad meals que son la lista de recetas
     getRecetas(): Observable<{ meals: Fotos[] }> { //se usa la interfaz
       return this.http.get<{ meals: Fotos[] }>(this.apiURL);
-    //como decir: Confía en que cada meal tiene los campos que definí en la interfaz Receta, y ayúdame a autocompletar y validar
   }
 }

@@ -3,13 +3,16 @@
 import { Component, OnInit } from '@angular/core'; //TRaer ONIT y Component de angular core
 import { RecetasService } from '../../servicio/recetas.service'; //traer el servicio de recetas
 import { Fotos } from '../../interfaz/fotos'; //traer la interfaz de fotos
+import { CommonModule } from '@angular/common'; //para usar ngIf y ngFor en el html
+
 
 //no tocar
 @Component({
   selector: 'app-platos',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './platos.component.html',
-  styleUrl: './platos.component.css'
+  styleUrls: ['./platos.component.css']
 })
 
 
@@ -19,13 +22,17 @@ export class PlatosComponent implements OnInit {
 
   constructor(private recetasService: RecetasService) { } //inyetar servcio, como api
 
+cargando: boolean = true;
+
   ngOnInit(): void {
-    this.recetasService.getRecetas().subscribe({// subscribe espera, obserbvale
+    this.recetasService.getRecetas().subscribe({
       next: (respuesta) => {
         this.recetas = respuesta.meals;
+        this.cargando = false;  // <- marca que ya cargó
       },
       error: (error) => {
         console.error('Error al cargar recetas:', error);
+        this.cargando = false;
       }
     });
   }

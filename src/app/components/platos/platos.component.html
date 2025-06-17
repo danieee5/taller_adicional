@@ -24,7 +24,7 @@
     </ng-container>
 
     <!-- Mostrar recetas reales -->
-    <ng-container *ngIf="!cargando">
+    <ng-container *ngIf= !cargando>
       <div class="col-md-4" *ngFor="let receta of recetas">
         <div class="card h-100">
           <img [src]="receta.strMealThumb" class="card-img-top" [alt]="receta.strMeal">

@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
+import { RouterModule } from '@angular/router';  // ← IMPORTANTE para que funcione routerLink
 
 @Component({
   selector: 'app-menu',
-  imports: [],
+  standalone: true,
+  imports: [RouterModule], // ← AGREGA ESTO
   templateUrl: './menu.component.html',
-  styleUrl: './menu.component.css'
+  styleUrls: ['./menu.component.css']
 })
-export class MenuComponent {
-
-}
+export class MenuComponent {}
